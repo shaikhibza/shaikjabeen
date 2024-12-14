@@ -1,0 +1,236 @@
+labuser@labuser-virtual-machine:~/test6/test5$ mkdir test0
+labuser@labuser-virtual-machine:~/test6/test5$ cd test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git init
+Initialized empty Git repository in /home/labuser/test6/test5/test0/.git/
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git config --global init.defaultBranch master
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git init
+Reinitialized existing Git repository in /home/labuser/test6/test5/test0/.git/
+labuser@labuser-virtual-machine:~/test6/test5/test0$ echo "test0">test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ ls
+test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test0
+
+nothing added to commit but untracked files present (use "git add" to track)
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git add .
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git commit -m "change1"
+[master (root-commit) 191b0f5] change1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git remote add origin https://github.com/shaikhibza/shaikjabeen.git
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git remote -v
+origin	https://github.com/shaikhibza/shaikjabeen.git (fetch)
+origin	https://github.com/shaikhibza/shaikjabeen.git (push)
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git push -u origin master
+Username for 'https://github.com': shaikhibza
+Password for 'https://shaikhibza@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/shaikhibza/shaikjabeen.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/test6/test5/test0$ ls
+test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ nano test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git add .
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git commit -m "change2"
+[master 86397d3] change2
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git push -u origin master
+Username for 'https://github.com': shaikhibza
+Password for 'https://shaikhibza@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 252 bytes | 252.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/shaikhibza/shaikjabeen.git
+   191b0f5..86397d3  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git branch
+* master
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git branch devops1
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git checkout devops1
+Switched to branch 'devops1'
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git branch
+* devops1
+  master
+labuser@labuser-virtual-machine:~/test6/test5/test0$ echo "test10">file1
+labuser@labuser-virtual-machine:~/test6/test5/test0$ echo "test11">file2
+labuser@labuser-virtual-machine:~/test6/test5/test0$ li
+li: command not found
+labuser@labuser-virtual-machine:~/test6/test5/test0$ ls -li
+total 12
+6162070 -rw-rw-r-- 1 labuser labuser 7 Dec 14 05:03 file1
+6162071 -rw-rw-r-- 1 labuser labuser 7 Dec 14 05:03 file2
+6162133 -rw-rw-r-- 1 labuser labuser 7 Dec 14 04:51 test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git add .
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git commit -m "change4"
+[devops1 b099706] change4
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1
+ create mode 100644 file2
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git push -u origin devops1
+Username for 'https://github.com': shaikhibza
+Password for 'https://shaikhibza@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 324 bytes | 324.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'devops1' on GitHub by visiting:
+remote:      https://github.com/shaikhibza/shaikjabeen/pull/new/devops1
+remote: 
+To https://github.com/shaikhibza/shaikjabeen.git
+ * [new branch]      devops1 -> devops1
+Branch 'devops1' set up to track remote branch 'devops1' from 'origin'.
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git branch
+* devops1
+  master
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git merge devops1
+Updating 86397d3..b099706
+Fast-forward
+ file1 | 1 +
+ file2 | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1
+ create mode 100644 file2
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git log -p
+commit b0997069d30f1511a43590c2c01f5e443d02d33e (HEAD -> master, origin/devops1, devops1)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 05:04:51 2024 -0500
+
+    change4
+
+diff --git a/file1 b/file1
+new file mode 100644
+index 0000000..5e08671
+--- /dev/null
++++ b/file1
+@@ -0,0 +1 @@
++test10
+diff --git a/file2 b/file2
+new file mode 100644
+index 0000000..cb19826
+--- /dev/null
++++ b/file2
+@@ -0,0 +1 @@
++test11
+
+commit 86397d38800e7e9db2ab9a0541c57720e56dd1ea (origin/master)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 04:51:55 2024 -0500
+
+    change2
+
+diff --git a/test0 b/test0
+index 38143ad..8834a5f 100644
+--- a/test0
++++ b/test0
+@@ -1 +1,2 @@
+-test0
++test7
++
+
+commit 191b0f58aca87b4e3e945c9bcd6bac36573b7991
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 04:35:10 2024 -0500
+
+    change1
+
+diff --git a/test0 b/test0
+new file mode 100644
+index 0000000..38143ad
+--- /dev/null
++++ b/test0
+@@ -0,0 +1 @@
++test0
+labuser@labuser-virtual-machine:~/test6/test5/test0$ git log --oneline
+b099706 (HEAD -> master, origin/devops1, devops1) change4
+86397d3 (origin/master) change2
+191b0f5 change1
+labuser@labuser-virtual-machine:~/test6/test5/test0$ ^C
+labuser@labuser-virtual-machine:~/test6/test5/test0$ cd
+labuser@labuser-virtual-machine:~$ git clone https://github.com/shaikhibza/shaikjabeen.git
+Cloning into 'shaikjabeen'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 10 (delta 1), reused 9 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (1/1), done.
+labuser@labuser-virtual-machine:~$ ls -li
+total 60
+6029410 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Desktop
+6029414 drwxr-xr-x 3 labuser labuser 4096 Dec 15  2023 Documents
+6029411 drwxr-xr-x 2 labuser labuser 4096 Dec 18  2023 Downloads
+6036475 -rw-rw-r-- 1 labuser labuser   53 Dec 18  2023 execute.yml
+6029415 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Music
+6029416 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Pictures
+6029413 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Public
+6030259 drwxrwxr-x 2 labuser labuser 4096 Dec 18  2023 repos
+6162063 drwxrwxr-x 3 labuser labuser 4096 Dec 14 05:29 shaikjabeen
+6029322 drwx------ 6 labuser labuser 4096 Dec 15  2023 snap
+6029412 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Templates
+6160784 drwxrwxr-x 4 labuser labuser 4096 Dec 14 01:19 test1
+6160467 drwxrwxr-x 4 labuser labuser 4096 Dec 14 04:05 test5
+6160414 drwxrwxr-x 4 labuser labuser 4096 Dec 14 04:30 test6
+6029418 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Videos
+labuser@labuser-virtual-machine:~$ cd labtest0
+bash: cd: labtest0: No such file or directory
+labuser@labuser-virtual-machine:~$ ls
+Desktop  Documents  Downloads  execute.yml  Music  Pictures  Public  repos  shaikjabeen  snap  Templates  test1  test5  test6  Videos
+labuser@labuser-virtual-machine:~$ cd shaikjabeen
+labuser@labuser-virtual-machine:~/shaikjabeen$ ls
+test0
+labuser@labuser-virtual-machine:~/shaikjabeen$ mkdir dev1
+labuser@labuser-virtual-machine:~/shaikjabeen$ cd dev1
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git pull https://github.com/shaikhibza/shaikjabeen.git
+From https://github.com/shaikhibza/shaikjabeen
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git remote -v
+origin	https://github.com/shaikhibza/shaikjabeen.git (fetch)
+origin	https://github.com/shaikhibza/shaikjabeen.git (push)
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git pull https://github.com/shaikhibza/shaikjabeen.git
+From https://github.com/shaikhibza/shaikjabeen
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ branch
+Command 'branch' not found, but can be installed with:
+sudo apt install rheolef
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git branch
+* master
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ ls -li
+total 0
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git branch m1
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git checkout m1
+Switched to branch 'm1'
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ echo "apple1" > fruit
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ ls
+fruit
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ ls
+fruit
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git checkout m1
+Switched to branch 'm1'
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ ls
+fruit
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ git rebase master
+Current branch m1 is up to date.
+labuser@labuser-virtual-machine:~/shaikjabeen/dev1$ 
+
